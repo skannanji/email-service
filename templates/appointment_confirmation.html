@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background-color: #4CAF50; color: white; padding: 20px; text-align: center; }
+        .content { padding: 20px; }
+        .footer { text-align: center; padding: 20px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Appointment Confirmation</h1>
+        </div>
+        <div class="content">
+            <p>Dear {{ patient_name }},</p>
+            <p>Your appointment has been confirmed with the following details:</p>
+            <ul>
+                <li>Doctor: Dr. {{ doctor_name }}</li>
+                <li>Date: {{ appointment_date }}</li>
+                <li>Time: {{ appointment_time }}</li>
+                <li>Hospital: {{ hospital_name }}</li>
+                <li>Department: {{ department }}</li>
+                <li>Booking Reference: {{ booking_reference }}</li>
+            </ul>
+            <p>Please arrive 15 minutes before your scheduled appointment time.</p>
+        </div>
+        <div class="footer">
+            <p>If you need to reschedule, please contact us or use our online portal.</p>
+        </div>
+    </div>
+</body>
+</html>

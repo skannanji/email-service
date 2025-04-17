@@ -1,0 +1,58 @@
+# Hospital Appointment Email Service
+
+## Setup Instructions
+
+1. Create Virtual Environment:
+   python -m venv venv
+   source venv/bin/activate  # For Linux/Mac
+   venv\Scripts\activate     # For Windows
+
+2. Install Dependencies:
+   pip install pip-tools
+   pip-compile requirements.in
+   pip install -r requirements.txt
+
+3. Environment Configuration:
+   - Create .env file in root directory
+   - Add following configurations:
+     MAIL_USERNAME=your_email@gmail.com
+     MAIL_PASSWORD=your_app_password
+     MAIL_FROM=your_email@gmail.com
+     MAIL_PORT=587
+     MAIL_SERVER=smtp.gmail.com
+
+4. Run Application:
+   uvicorn app.main:app --reload
+
+## API Endpoints
+
+1. Send Appointment Confirmation:
+   POST /email/send-appointment-confirmation
+   
+2. Send Welcome Email:
+   POST /email/send-welcome-email
+
+## Project Structure
+email-service/
+├── app/
+│   ├── api/          # API routes
+│   ├── core/         # Core configurations
+│   ├── schemas/      # Pydantic models
+│   ├── services/     # Business logic
+│   └── templates/    # Email templates
+├── requirements.in   # Primary dependencies
+└── .env             # Environment variables
+
+## Development Guidelines
+- Add new email templates in app/templates/
+- Create new routes in app/api/
+- Update schemas in app/schemas/
+- Add new services in app/services/
+
+## Testing
+Access API documentation at:
+http://localhost:8000/docs
+
+## Note
+Make sure to use a valid SMTP configuration in .env file
+
